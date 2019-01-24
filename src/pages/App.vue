@@ -3,7 +3,7 @@
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
     <!-- <CardTest/> -->
-    <router-view v-on:test="called"></router-view>
+    <router-view v-on:successLogin="successLogin" :msg=this.userLoggedin.username></router-view>
   </div>
 </template>
 
@@ -14,16 +14,25 @@
 
 export default {
   name: 'app',
+  data : function() {
+    return {
+      userLoggedin: {
+        username : '',
+        role : ''
+      }
+
+    }
+  },
   components: {
     // HelloWorld
     // CardTest
     // 'app-header' :header
   },
   methods : {
-    called : function () {
-      alert('eaaaa');
+    successLogin : function (event) {
       window.console.log(this.$router.currentRoute);
-      this.$router.push({ path: '/'})
+      this.userLoggedin.username = event;
+      this.$router.push({ path: '/hello'})
     }
   }
 }

@@ -1,9 +1,10 @@
 <template>
     <nav>
         <ul>
-            <li><router-link exact to="/">HelloWorld</router-link></li>
-            <li><router-link exact to="/login">login</router-link></li>            
-            <li><router-link exact to="/card">card</router-link></li>                        
+            <li><router-link exact to="/hello">HelloWorld</router-link></li>
+            <li><router-link exact to="/card">card</router-link></li>
+            <li><router-link exact to="/">logout</router-link></li>
+                                     
         </ul>
     </nav>
 </template>

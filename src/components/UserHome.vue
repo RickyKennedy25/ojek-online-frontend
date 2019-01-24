@@ -1,6 +1,6 @@
 <template>
 
-  <div class="hello">
+  <div class="user-home">
     <app-header></app-header>
     <h1>{{ msg }}</h1>
   </div>
@@ -9,12 +9,20 @@
 <script>
 import header from './Header.vue';
 export default {
-  name: 'HelloWorld',
+  name: 'UserHome',
+  data : function() {
+      return {
+          username = ''
+      }
+  },
   props: {
     msg: String
   },
   components : {
     'app-header' : header,
+  },
+  mounted(){
+      this.username = this.msg;
   }
 }
 </script>
